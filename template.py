@@ -4,13 +4,13 @@ import cv2
 import numpy as np
   
 # Read the main image
-img_rgb = cv2.imread('main_image.jpg')
+img_rgb = cv2.imread('table.jpg')
   
 # Convert it to grayscale
 img_gray = cv2.cvtColor(img_rgb, cv2.COLOR_BGR2GRAY)
   
 # Read the template
-template = cv2.imread('logo.jpg', 0)
+template = cv2.imread('6_3_piece.jpg', 0)
   
 # Store width and height of template in w and h
 w, h = template.shape[::-1]
@@ -32,5 +32,5 @@ for pt in zip(*loc[::-1]):
 cv2.imshow('Detected', img_rgb)
 #print(res)
 # save image  
-status = cv2.imwrite(r'img2.jpg',img_rgb)  
+status = cv2.imwrite(r'detection.jpg',img_rgb)  
 print("Image written sucess? : ", status)  
